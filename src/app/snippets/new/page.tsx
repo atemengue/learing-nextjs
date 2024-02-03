@@ -13,11 +13,10 @@ export default function SnippetCreatePage() {
 
     // make sure new record in the database
 
-    const snippet = await db.snippet.create({
+    await db.snippet.create({
       data: { title, code },
     });
 
-    console.log(snippet);
     redirect('/');
   }
 
