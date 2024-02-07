@@ -29,10 +29,9 @@ export async function createTopic(formState: CreateTopicFormState, formData: For
   });
 
   if(!result.success) {
-    console.log(result.error.flatten().fieldErrors,);
-  }
+    return { errors: result.error.flatten().fieldErrors}
 
-  // console.log(result, 'result') 
+  }
 
    const session = await auth();
    if (!session || !session.user) {

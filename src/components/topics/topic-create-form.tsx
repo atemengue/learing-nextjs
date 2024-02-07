@@ -2,7 +2,6 @@
 
 import * as actions from "@/actions";
 import { Button, Input, Popover, PopoverContent, PopoverTrigger, Textarea } from '@nextui-org/react';
-import { error } from 'console';
 import { useFormState } from 'react-dom';
 import FormButton from '../common/form-button';
 
@@ -29,9 +28,6 @@ export default function TopicCreateForm() {
               errorMessage={formState.errors.name?.join(', ')}
               isInvalid={!!formState.errors.name}
                />
-            <div className="bg-red-400">
-            {formState.errors.name?.join(', ')}
-            </div>
             <Textarea
               name="description"
               label="Description"
